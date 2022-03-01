@@ -37,33 +37,58 @@
         map, filter e reduce que façam sentido para o contexto escolhido*/
 
         const rockbands = [
-            {nome: 'The Beatles,'
-             membros: '4',
-             discos:  '12',
-            }
+            {nome: 'The Beatles',
+             membros: 4,
+             discos:  12
+            },
 
-            {nome: 'Guns N Roses',
-             membros: '5',
-             discos: '6',
-            }
+            {nome: 'Guns and Roses',
+             membros: 5,
+             discos: 6
+            },
 
             {nome: 'Faith No More',
-             membros: '5',
-             discos: '7',
-            }
+             membros: 5,
+             discos: 7
+            },
 
             {nome: 'Alice Cooper',
-             membros: '5',
-             discos: '7',
-            }
+             membros: 5,
+             discos:  7
+            },
+            //inclui em Alice Cooper apenas os discos que foram lançados enquanto banda.
 
             {nome: 'Rush',
-             membros: '3',
-             discos: '20',
-            }
-        ]
+             membros: 3,
+             discos: 20
+            },
+        ];
+        
+        //MAPEAR
+        function listabandas(rockbands) {
+            return rockbands.map((n) => {
+                return n.nome;
+            })
+        }
 
+        console.log(listabandas(rockbands));
 
+        //FILTRAR
+
+        let membrosnumero = rockbands.filter(membrosfiltro);
+
+        function membrosfiltro(rockbands) {
+            return rockbands.membros < 5;
+        }
+
+        console.log(membrosnumero);
+
+        //REDUZIR
+
+        const totaldediscos = rockbands.reduce ((somatoria, item) => 
+        somatoria + item.discos, 0);
+
+        console.log(totaldediscos);
     </script>
 </body>
 </html>
